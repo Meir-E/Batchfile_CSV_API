@@ -8,13 +8,13 @@
 ::--------------------------------------------------
 :: Main
 ::--------------------------------------------------
-call :Print_CSV_4xx 
+call :Print_CSV_4xx "sample.csv"
 pause
 call :eof
 ::--------------------------------------------------
 :: Functions here
 ::--------------------------------------------------
 :Print_CSV_4xx
-for /f "usebackq tokens=1-4 delims=," %%a in ("sample.csv") do (
+for /f "usebackq tokens=1-4 delims=," %%a in (%1) do (
       echo %%a %%b %%c %%d )
 EXIT /B 0
